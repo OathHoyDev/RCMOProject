@@ -189,7 +189,7 @@
                 <com.neopixl.pixlui.components.button.Button
                     pixlui:typeface="Quark-Bold.otf"
                     android:layout_width="130dp"
-                    android:layout_height="61dp"
+                    android:layout_height="60dp"
                     android:id="@+id/btnCalculate"
                     android:scaleType="fitEnd"
                     android:textStyle="bold"
