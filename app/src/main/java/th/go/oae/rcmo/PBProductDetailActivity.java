@@ -69,6 +69,9 @@ public class PBProductDetailActivity extends AppCompatActivity {
             @Override
             public void onPageScrollStateChanged(int state) {
                 tabLayout.setBackgroundResource(R.color.RcmoTran);
+               if( ProductDetailMapFragment.popupWindow != null && ProductDetailMapFragment.popupWindow.isShowing()){
+                   ProductDetailMapFragment.popupWindow.dismiss();
+               }
                // Toast toast = Toast.makeText( PBProductDetailActivity.this, "onPageScrollStateChanged", Toast.LENGTH_SHORT);
                 //toast.show();
             }

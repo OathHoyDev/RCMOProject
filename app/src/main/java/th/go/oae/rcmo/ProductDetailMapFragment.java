@@ -81,7 +81,7 @@ public class ProductDetailMapFragment extends Fragment {
 
     FrameLayout fadeView;
 
-    private PopupWindow popupWindow;
+    public static PopupWindow popupWindow;
 
     private String productType;
 
@@ -269,7 +269,9 @@ public class ProductDetailMapFragment extends Fragment {
 //                longitude = String.valueOf(latLng.longitude);
 
                 map.clear();
-                pinPlotLocation(Double.parseDouble(latitude), Double.parseDouble(longitude));
+                if (!"".equals(latitude)) {
+                    pinPlotLocation(Double.parseDouble(latitude), Double.parseDouble(longitude));
+                }
 
                 Log.d(TAG, "onMapClick: " + latLng.toString());
                 API_getPlotSuit(String.valueOf(latLng.latitude), String.valueOf(latLng.longitude), "2");
@@ -1030,5 +1032,11 @@ public class ProductDetailMapFragment extends Fragment {
 
     }
 
-
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(popupWindow !=null){
+              popupWindow.dismiss();
+        }
+    }
 }
